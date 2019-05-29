@@ -13,18 +13,6 @@ public class MySinglyLinkedList<E> {
 			this.next = null;
 		}
 		
-		public Node(Object data, Node node) {
-			// 
-			this.data = data;
-			this.next = node.next;
-		}
-		
-		@Override
-		public String toString() {
-			// TODO Auto-generated method stub
-			return data.toString();
-		}
-		
 	}
 	private int size;
 	private Node head;
@@ -57,9 +45,8 @@ public class MySinglyLinkedList<E> {
 		return true;
 	}
 	// 몇번째 노드를 가져오고 싶은지
-	public E get(int index) {
-		
-		 if(index < 0 || size >= index)
+	public E get(int index) { 
+		 if(index < 0 || size <=index)
 			 throw new IndexOutOfBoundsException();
 		 
 		 Node node = getNode(index);
@@ -107,26 +94,21 @@ public class MySinglyLinkedList<E> {
 		return -1;
 	}
 	
-	//해당 요소 삭제 중요!
+	//해당 index의 요소 삭제 중요!
 	public E remove(int index) {
-		// 해당 노드 까지 접근 
-		Node node = head;
-		
-		Node currentNode = getNode(index);
-		for(; node.next != null; node=node.next) {}
-		// 해당 노드가 마지막 노드이면
-		if(node.next == null) {
-			// 현재 데이터를 null로 바꿔준다.
-			node.data = null;
+		E element = get(index);
+
+		Node preNode = getNode(index - 1);
+
+		// 첫번째 노드이면?
+		if (index == 0) {
+			head = new Node(head.next);
 		} else {
-			// 뒤에 또다른 노드가 존재한다면 
-			// 그 노드랑 이어줘야한다.
-			Node preNode = getNode(index-1);
-			
-			preNode.next = currentNode.next.next;
+			preNode.next = preNode.next.next;
 		}
+
 		size--;
-		return (E)currentNode.data;
+		return element;
 	}
 	
 	@Override
