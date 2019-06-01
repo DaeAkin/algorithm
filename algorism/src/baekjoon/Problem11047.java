@@ -43,6 +43,10 @@ public class Problem11047 {
 			}
 			
 		});
+		
+		for (Integer integer : reValue) {
+			System.out.println(integer);
+		}
 
 		// K을 value[] 값들 중에 큰 값부터 나눠서 최대 몫을 구하고, 나머지를 반환 받는다.
 		int result= 0;
