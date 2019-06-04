@@ -18,36 +18,33 @@ public class Problem10610 {
 		
 		String str = br.readLine();
 		
-		boolean isThereZero = false;
-		ArrayList<Integer> N = new ArrayList<>();
+		int strL = str.length();
+	
+		int numberCount[] = new int[10];
 		
-		
-		for(int i=0; i<str.length(); i++) {
-			N.add(Integer.parseInt(str.split("")[i]));
-		}
 		int result = 0;
 		
-		for (Integer integer : N) {
-			if(integer == 0)
-				isThereZero = true;
-			result += integer;
-		}
-		Collections.sort(N , new Comparator<Integer>() {
-
-			@Override
-			public int compare(Integer o1, Integer o2) {
-				// TODO Auto-generated method stub
-				return o2.compareTo(o1);
-			}
+		for(int i=0; i<strL; i++) {
 			
-		});
-		
-		if(!isThereZero || result % 3 != 0) {
+			int target = Integer.parseInt(str.substring(i, i+1));
+
+			numberCount[target] += 1;
+			
+			result += target;
+			
+		}
+
+		// String에 0이 없으면 30의 배수가 될 수 없음.
+		// 각자리의 숫자의 합이 3의 배수가 아니라면 30의 배수가 될 수 없음.
+		if(!str.contains("0") || result % 3 != 0) {
 			System.out.println("-1");
 		} else {
 			StringBuilder sb = new StringBuilder();
-			for (Integer integer : N) {
-				sb.append(integer);
+			for(int i=9; i>=0; i--) {
+				while(numberCount[i] >0) {
+					sb.append(i);
+					numberCount[i]--;
+				}
 			}
 			System.out.println(sb.toString());
 		}
