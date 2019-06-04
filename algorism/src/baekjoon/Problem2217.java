@@ -46,8 +46,6 @@ public class Problem2217 {
 			}
 		});
 		
-	
-		
 		System.out.println(resultList.get(0));
 		
 	}
