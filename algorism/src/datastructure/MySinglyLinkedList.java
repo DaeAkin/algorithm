@@ -66,7 +66,7 @@ public class MySinglyLinkedList<E> {
 	
 	// n번째 있는 노드의 값 수정하고
 	// 원래 들어있던 값 리턴하기
-	public E set(E element, int index) {
+	public E set(int index,E element ) {
 		//get() 호출하기
 		E old = get(index);
 		// get이랑 코드가 대부분 겹치넹.. 일단하자..

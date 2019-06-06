@@ -1,24 +1,41 @@
 package datastructure;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
+import java.util.List;
+
+import org.junit.Test;
+
 public class LikedListTest {
 
-	public static void main(String[] args) {
+
+	@Test
+	public void myDoublyLinkedList() {
+		List<Integer> list = new MyDoublyLinkedlist<>();
 		
-		MySinglyLinkedList<Integer> list = new MySinglyLinkedList<>();
 		list.add(5);
 		list.add(3);
 		list.add(1);
 		list.add(4);
 		list.add(9);
-		System.out.println("현재 노드 :" + list.toString());
-		System.out.println("3번째 값 가져오기 ! : " + list.get(2));
-		System.out.println("0이 있는지 확인 ! : " + list.indexOf(0));
-		System.out.println("4은 어디있나요?! : " + list.indexOf(4) + "째 방에 있음!");
-		System.out.println("2번 째 요소 삭제하기 ! : " +list.remove(1));
-		System.out.println("현재 노드 :" + list.toString());
-		System.out.println("첫번 째 요소를 10으로 변경! ");
-		list.set(10, 0);
-		System.out.println("현재 노드 :" + list.toString());
+		System.out.println(list.toString());
+		
+		assertThat(list.size(), is(5));
+		assertThat(list.get(2), is(1));
+		assertThat(list.get(4), is(9));
+		assertThat(list.indexOf(0), is(-1));
+		assertThat(list.indexOf(4), is(3));
+		assertThat(list.remove(1), is(3));
+		assertThat(list.size(), is(4));
+		list.set(0, 10);
+		assertThat(list.get(0), is(10));
+		assertThat(list.remove(0), is(10));
+		assertThat(list.size(), is(3));
+		System.out.println("5랑 3이랑 제거됨.");
+		System.out.println(list.toString());
+		System.out.println(list.get(1));
+		assertThat(list.remove(2), is(9));
 		
 	}
 }
