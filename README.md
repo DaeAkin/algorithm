@@ -3,7 +3,7 @@
 ## 백준사이트 문제의 해답들입니다.
 
 
-#DataStructure
+# DataStructure
 
 ## 자바 기본 자료구조
 
