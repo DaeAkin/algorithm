@@ -48,7 +48,6 @@ public class MyTree {
 		} 
 		// 값이 존재
 			return currentNode;
-		
 	}
 	
 	public boolean contains(int value) {
@@ -80,7 +79,6 @@ public class MyTree {
 		if(currentNode == null) {
 			return null;
 		}
-		
 		
 		// 찾는 값이 존재
 		System.out.println("currentNode.value :" + currentNode.value + " // value : " + value);
@@ -128,8 +126,6 @@ public class MyTree {
 	}
 	
 	public void dfsR(Node node) {
-		
-//		System.out.println("node : " + node);
 		if(node != null) {
 			System.out.print(node.value + " ");
 			dfsR(node.left);
