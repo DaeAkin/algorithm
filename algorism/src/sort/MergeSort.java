@@ -28,7 +28,7 @@ public class MergeSort {
 			tmp[i] = arr[i];
 			System.out.println("arr["+i+"] :" + arr[i]);
 		}
-		
+
 		int part1 = start;
 		int part2 = mid + 1;
 		int index = start;
