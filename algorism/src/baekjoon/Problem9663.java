@@ -22,25 +22,19 @@ public class Problem9663 {
     }
 
     public static boolean isValid(int i, int cnt) {
-        //같은 행 체크
-        for(int y=0; y<cnt; y++ ) {
-            if(chessBoard[y][i])
-                return false;
-        }
         //같은 열 체크
-        for(int x=0; x<cnt; x++) {
-            if(chessBoard[i][x])
+        for(int y=0; y<cnt; y++) {
+            if(chessBoard[i][y])
                 return false;
         }
 
-        //대각선 체크
-        for(int x=i,y=cnt; ; x--,y-- ) {
-
-            if(chessBoard[x][y] ||  )
+        //왼쪽 대각선 체크
+        for(int x=i,y=cnt; x>=0 && y>=0; x--,y-- ) {
+            if(chessBoard[x][y] )
                 return false;
         }
-
-        for(int x=i,y=cnt; y<7 || x<7; x++,y++ ) {
+        //오른쪽 대각선 체크
+        for(int x=i,y=cnt; y<N && y>=0 && x<N; x++,y-- ) {
             if(chessBoard[x][y])
                 return false;
         }
