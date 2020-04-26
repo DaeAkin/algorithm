@@ -34,8 +34,14 @@ public class Problem9663 {
         }
 
         //대각선 체크
-        for(int x=i,y=cnt; y>=0 || x>=0; x--,y-- ) {
-            if(chessBoard[x][y] || y==0 || x==0)
+        for(int x=i,y=cnt; ; x--,y-- ) {
+
+            if(chessBoard[x][y] ||  )
+                return false;
+        }
+
+        for(int x=i,y=cnt; y<7 || x<7; x++,y++ ) {
+            if(chessBoard[x][y])
                 return false;
         }
 
