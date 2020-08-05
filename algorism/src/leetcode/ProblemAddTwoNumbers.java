@@ -6,18 +6,18 @@ public class ProblemAddTwoNumbers {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-//         ListNode testNode1 = new ListNode(2);
-//         testNode1.next = new ListNode(4);
-//         testNode1.next.next = new ListNode(3);
+         ListNode testNode1 = new ListNode(2);
+         testNode1.next = new ListNode(4);
+         testNode1.next.next = new ListNode(3);
+
+         ListNode testNode2 = new ListNode(5);
+         testNode2.next = new ListNode(6);
+         testNode2.next.next = new ListNode(4);
+
+//        ListNode testNode1 = new ListNode(0);
 //
-//         ListNode testNode2 = new ListNode(5);
-//         testNode2.next = new ListNode(6);
-//         testNode2.next.next = new ListNode(4);
-
-        ListNode testNode1 = new ListNode(0);
-
-
-        ListNode testNode2 = new ListNode(0);
+//
+//        ListNode testNode2 = new ListNode(0);
 
 
         ListNode listNode = solution.addTwoNumbers(testNode1, testNode2);
@@ -43,11 +43,30 @@ public class ProblemAddTwoNumbers {
 
     static class Solution {
         public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-            int numberOne = ListToInt(l1);
-            int numberTwo = ListToInt(l2);
-
-            return toListNode(numberOne + numberTwo);
+            ListNode dummyHead = new ListNode(0);
+            ListNode p = l1, q = l2, curr = dummyHead;
+            int carry = 0;
+            while (p != null || q != null) {
+                int x = (p != null) ? p.val : 0;
+                int y = (q != null) ? q.val : 0;
+                int sum = carry + x + y;
+                carry = sum / 10;
+                curr.next = new ListNode(sum % 10);
+                curr = curr.next;
+                if (p != null) p = p.next;
+                if (q != null) q = q.next;
+            }
+            if (carry > 0) {
+                curr.next = new ListNode(carry);
+            }
+            return dummyHead.next;
         }
+//        public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+//            int numberOne = ListToInt(l1);
+//            int numberTwo = ListToInt(l2);
+//
+//            return toListNode(numberOne + numberTwo);
+//        }
 
         public int ListToInt(ListNode node) {
             String result = "";
