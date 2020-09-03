@@ -6,7 +6,7 @@ public class ProblemAddTwoNumbers {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-<<<<<<< HEAD
+
 //         ListNode testNode1 = new ListNode(2);
 //         testNode1.next = new ListNode(4);
 //         testNode1.next.next = new ListNode(3);
@@ -17,11 +17,7 @@ public class ProblemAddTwoNumbers {
 
         ListNode testNode1 = new ListNode(1);
         testNode1.next = new ListNode(8);
-=======
-         ListNode testNode1 = new ListNode(2);
-         testNode1.next = new ListNode(4);
-         testNode1.next.next = new ListNode(3);
->>>>>>> fd91c7ecb7f758f425de4d88845c9c615ae69207
+
 
          ListNode testNode2 = new ListNode(5);
          testNode2.next = new ListNode(6);

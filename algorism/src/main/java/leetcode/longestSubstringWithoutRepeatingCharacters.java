@@ -3,36 +3,27 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class longestSubstringWithoutRepeatingCharacters {
      public static void main(String[] args) {
 
          Solution solution = new Solution();
 
-         int result = solution.lengthOfLongestSubstring("abcabcbb");
-         System.out.println(result);
+         assertThat(solution.lengthOfLongestSubstring("abcabcbb")).isEqualTo(3);
 
-         int result2 = solution.lengthOfLongestSubstring("bbbb");
-         System.out.println(result2);
+         assertThat(solution.lengthOfLongestSubstring("bbbb")).isEqualTo(1);
 
-         int result3 = solution.lengthOfLongestSubstring("pwwkew");
-         System.out.println(result3);
+         assertThat(solution.lengthOfLongestSubstring("pwwkew")).isEqualTo(3);
 
-         int result4 = solution.lengthOfLongestSubstring("");
-         System.out.println(result4);
+         assertThat(solution.lengthOfLongestSubstring("")).isEqualTo(0);
 
-         int result5 = solution.lengthOfLongestSubstring(" ");
-         System.out.println(result5);
+         assertThat(solution.lengthOfLongestSubstring(" ")).isEqualTo(1);
 
-         int result6 = solution.lengthOfLongestSubstring("a");
-         System.out.println(result6);
-
-
-
+         assertThat(solution.lengthOfLongestSubstring("a")).isEqualTo(1);
      }
 
-
+// 내 정답
       static class Solution {
           public int lengthOfLongestSubstring(String s) {
 
