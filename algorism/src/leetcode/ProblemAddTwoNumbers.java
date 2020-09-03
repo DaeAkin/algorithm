@@ -14,14 +14,15 @@ public class ProblemAddTwoNumbers {
 //         testNode2.next = new ListNode(6);
 //         testNode2.next.next = new ListNode(4);
 
-        ListNode testNode1 = new ListNode(0);
+        ListNode testNode1 = new ListNode(1);
+        testNode1.next = new ListNode(8);
 
 
         ListNode testNode2 = new ListNode(0);
 
 
         ListNode listNode = solution.addTwoNumbers(testNode1, testNode2);
-        System.out.println(listNode.val + ":" + listNode.next.val + ":" + listNode.next.next.val);
+        System.out.println(listNode.val + ":" + listNode.next.val + ":" );
     }
 
     static public class ListNode {
@@ -64,7 +65,7 @@ public class ProblemAddTwoNumbers {
         public ListNode toListNode(int num) {
             String[] number = String.valueOf(num).split("");
             ListNode listNode = new ListNode(Integer.parseInt(number[number.length - 1]));
-            if (number.length != 1)
+            if (number.length == 1)
                 return new ListNode(num);
 
             listNode.next = new ListNode();
