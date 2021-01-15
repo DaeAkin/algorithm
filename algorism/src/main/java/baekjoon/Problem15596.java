@@ -1,4 +1,4 @@
-package baekjoon;
+package main.java.baekjoon;
 
 //https://www.acmicpc.net/problem/15596
 //정수 N개의 합
